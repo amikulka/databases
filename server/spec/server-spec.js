@@ -54,7 +54,7 @@ describe('Persistent Node Chat Server', () => {
           expect(results.length).toEqual(1);
 
           // TODO: If you don't have a column named text, change this test.
-          expect(results[0]['message_text']).toEqual(text);
+          expect(results[0].text).toEqual(text);
           done();
         });
       })
@@ -82,7 +82,7 @@ describe('Persistent Node Chat Server', () => {
         .then((response) => {
           const messageLog = response.data;
           expect(messageLog[0].username).toEqual(username);
-          expect(messageLog[0]['message_text']).toEqual(text);
+          expect(messageLog[0].text).toEqual(text);
           expect(messageLog[0].roomname).toEqual(roomname);
           done();
         })
